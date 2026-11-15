@@ -5,6 +5,55 @@
 /* ── Custom base styles ── */
 @layer base {
   body {
-    @apply min-h-screen font-sans;
+    @apply min-h-screen font-sans bg-gray-50 text-gray-800 antialiased;
+  }
+}
+
+/* ── Aturan Cetak Khusus (window.print() / Ekspor PDF) ── */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    font-size: 11pt !important;
+  }
+
+  /* Sembunyikan elemen navigasi interaktif saat cetak */
+  header,
+  footer,
+  nav,
+  button,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Pastikan elemen print tampil */
+  .print\:block {
+    display: block !important;
+  }
+
+  .print\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  /* Atur padding dan border tabel agar tajam di kertas */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  th, td {
+    padding: 6px 8px !important;
+    border: 1px solid #d1d5db !important;
+  }
+
+  th {
+    background-color: #f3f4f6 !important;
+    color: #374151 !important;
+    font-weight: 600 !important;
+  }
+
+  /* Hindari pemotongan baris di tengah halaman */
+  tr {
+    page-break-inside: avoid !important;
   }
 }

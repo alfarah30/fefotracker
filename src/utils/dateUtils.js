@@ -1,6 +1,6 @@
 /**
- * Utilitas tanggal untuk menghitung sisa masa simpan
- * dan menentukan status kadaluarsa obat.
+ * Utilitas tanggal untuk menghitung sisa masa simpan,
+ * menentukan status kadaluarsa obat, dan pengurutan FEFO.
  */
 
 /**
@@ -19,56 +19,73 @@ export function getDaysUntilExpiry(expiryDateStr) {
 }
 
 /**
- * Tentukan status berdasarkan sisa hari:
- *  - "kritis"  → < 30 hari atau sudah lewat
- *  - "waspada" → 30 – 180 hari (1–6 bulan)
- *  - "aman"    → > 180 hari (> 6 bulan)
+ * Tentukan status berdasarkan aturan sisa hari:
+ *  - "kritis"  → <= 30 hari atau sudah lewat (Merah)
+ *  - "waspada" → 31 s/d 180 hari (1–6 bulan) (Kuning)
+ *  - "aman"    → > 180 hari (> 6 bulan) (Hijau)
  *
  * @param {number} daysLeft
  * @returns {"aman" | "waspada" | "kritis"}
  */
 export function getStatus(daysLeft) {
-  if (daysLeft < 30) return 'kritis';
+  if (daysLeft <= 30) return 'kritis';
   if (daysLeft <= 180) return 'waspada';
   return 'aman';
 }
 
 /**
- * Format sisa hari menjadi string yang mudah dibaca.
+ * Format sisa hari menjadi teks informatif:
+ * - Jika <= 0: "Kedaluwarsa" atau "Kedaluwarsa (X hari lalu)"
+ * - Jika 1 s/d 30: "Sisa X hari"
+ * - Jika > 30: "X bulan Y hari"
+ *
  * @param {number} daysLeft
  * @returns {string}
  */
 export function formatRemainingTime(daysLeft) {
   if (daysLeft < 0) {
     const overdue = Math.abs(daysLeft);
-    return `Kedaluwarsa ${overdue} hari lalu`;
+    return `Kedaluwarsa (${overdue} hari lalu)`;
   }
   if (daysLeft === 0) return 'Kedaluwarsa hari ini';
-  if (daysLeft <= 30) return `${daysLeft} hari`;
+  if (daysLeft <= 30) return `Sisa ${daysLeft} hari`;
+
   if (daysLeft <= 365) {
     const months = Math.floor(daysLeft / 30);
-    const remainingDays = daysLeft % 30;
-    return remainingDays > 0
-      ? `${months} bulan ${remainingDays} hari`
-      : `${months} bulan`;
+    const remDays = daysLeft % 30;
+    return remDays > 0 ? `${months} bulan ${remDays} hari` : `${months} bulan`;
   }
+
   const years = Math.floor(daysLeft / 365);
-  const remainingMonths = Math.floor((daysLeft % 365) / 30);
-  return remainingMonths > 0
-    ? `${years} tahun ${remainingMonths} bulan`
-    : `${years} tahun`;
+  const remMonths = Math.floor((daysLeft % 365) / 30);
+  return remMonths > 0 ? `${years} tahun ${remMonths} bulan` : `${years} tahun`;
 }
 
 /**
- * Format tanggal ISO ke format Indonesia (DD MMM YYYY).
+ * Format tanggal ISO (YYYY-MM-DD) ke format Indonesia (DD MMM YYYY).
  * @param {string} dateStr - Format "YYYY-MM-DD"
  * @returns {string}
  */
 export function formatDateID(dateStr) {
+  if (!dateStr) return '-';
   const date = new Date(dateStr + 'T00:00:00');
   return date.toLocaleDateString('id-ID', {
     day: 'numeric',
     month: 'short',
     year: 'numeric',
+  });
+}
+
+/**
+ * Urutkan array obat berdasarkan prinsip FEFO (First Expired, First Out)
+ * Tanggal kedaluwarsa paling dekat atau sudah lewat selalu di posisi teratas.
+ * @param {Array} items
+ * @returns {Array} Array terurut baru
+ */
+export function sortByFEFO(items) {
+  return [...items].sort((a, b) => {
+    const timeA = new Date(a.expiryDate + 'T00:00:00').getTime();
+    const timeB = new Date(b.expiryDate + 'T00:00:00').getTime();
+    return timeA - timeB;
   });
 }

@@ -1,10 +1,7 @@
 /**
  * Data dummy 8 batch obat apotek Indonesia.
- * Disusun berdasarkan prinsip FEFO (First Expired, First Out).
- *
- * Catatan:
- * - Paracetamol 500 mg → 2 batch (Kritis & Aman)
- * - Amoxicillin 500 mg → 2 batch (Waspada & Aman)
+ * Dilengkapi dengan informasi distributor/PBF resmi.
+ * Disusun berdasarkan urutan tanggal kedaluwarsa (FEFO).
  */
 
 const dummyInventory = [
@@ -13,6 +10,7 @@ const dummyInventory = [
     name: 'Cefixime',
     dosage: '100 mg',
     batchNumber: 'CFX-2024A',
+    supplier: 'PT Kimia Farma Trading & Distribution',
     stock: 5,
     unit: 'Box',
     expiryDate: '2026-10-30',
@@ -22,6 +20,7 @@ const dummyInventory = [
     name: 'Paracetamol',
     dosage: '500 mg',
     batchNumber: 'PCM-2024A',
+    supplier: 'PT Enseval Putera Megatrading',
     stock: 12,
     unit: 'Box',
     expiryDate: '2026-11-30',
@@ -31,6 +30,7 @@ const dummyInventory = [
     name: 'Amoxicillin',
     dosage: '500 mg',
     batchNumber: 'AMX-2025A',
+    supplier: 'PT Anugrah Argon Medica',
     stock: 20,
     unit: 'Box',
     expiryDate: '2027-03-20',
@@ -40,6 +40,7 @@ const dummyInventory = [
     name: 'Omeprazole',
     dosage: '20 mg',
     batchNumber: 'OMP-2025A',
+    supplier: 'PT Mensa Bina Sukses',
     stock: 8,
     unit: 'Strip',
     expiryDate: '2027-04-15',
@@ -49,6 +50,7 @@ const dummyInventory = [
     name: 'Paracetamol',
     dosage: '500 mg',
     batchNumber: 'PCM-2025B',
+    supplier: 'PT Enseval Putera Megatrading',
     stock: 30,
     unit: 'Box',
     expiryDate: '2027-08-15',
@@ -58,6 +60,7 @@ const dummyInventory = [
     name: 'Amoxicillin',
     dosage: '500 mg',
     batchNumber: 'AMX-2025B',
+    supplier: 'PT Anugrah Argon Medica',
     stock: 15,
     unit: 'Box',
     expiryDate: '2027-09-10',
@@ -67,6 +70,7 @@ const dummyInventory = [
     name: 'Cetirizine',
     dosage: '10 mg',
     batchNumber: 'CTZ-2025A',
+    supplier: 'PT Parit Padang Global',
     stock: 25,
     unit: 'Strip',
     expiryDate: '2027-10-20',
@@ -74,8 +78,9 @@ const dummyInventory = [
   {
     id: 8,
     name: 'Salbutamol Inhaler',
-    dosage: '',
+    dosage: '100 mcg',
     batchNumber: 'SBT-2025A',
+    supplier: 'PT Dexa Medica Distribution',
     stock: 10,
     unit: 'Botol',
     expiryDate: '2027-12-01',
