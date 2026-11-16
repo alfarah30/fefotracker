@@ -13,7 +13,7 @@ const columns = [
   { label: 'No. Batch', className: 'text-left' },
   { label: 'PBF / Pemasok', className: 'text-left' },
   { label: 'Stok', className: 'text-center' },
-  { label: 'Tgl. Kedaluwarsa', className: 'text-left' },
+  { label: 'Tgl. Kadaluwarsa', className: 'text-left' },
   { label: 'Sisa Masa Simpan', className: 'text-left' },
   { label: 'Status', className: 'text-center' },
   { label: 'Aksi', className: 'text-center print:hidden' },
@@ -137,7 +137,7 @@ export default function InventoryTable({
                       </span>
                     </td>
 
-                    {/* Tanggal Kedaluwarsa */}
+                    {/* Tanggal Kadaluwarsa */}
                     <td className="px-4 py-3.5">
                       <div className="flex items-center gap-1.5 text-xs text-gray-700">
                         <Calendar size={13} className="text-gray-400" />

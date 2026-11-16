@@ -46,7 +46,7 @@ export default function AddBatchModal({ isOpen, onClose, onAdd }) {
       errs.stock = 'Jumlah stok minimal 1';
     }
     if (!formData.expiryDate) {
-      errs.expiryDate = 'Tanggal kedaluwarsa wajib dipilih';
+      errs.expiryDate = 'Tanggal kadaluwarsa wajib dipilih';
     }
     setErrors(errs);
     return Object.keys(errs).length === 0;
@@ -151,7 +151,7 @@ export default function AddBatchModal({ isOpen, onClose, onAdd }) {
             </div>
           </div>
 
-          {/* Nomor Batch & Tanggal Kedaluwarsa */}
+          {/* Nomor Batch & Tanggal Kadaluwarsa */}
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <div>
               <label className="block text-xs font-medium text-gray-700 mb-1 flex items-center gap-1">
@@ -178,7 +178,7 @@ export default function AddBatchModal({ isOpen, onClose, onAdd }) {
             <div>
               <label className="block text-xs font-medium text-gray-700 mb-1 flex items-center gap-1">
                 <Calendar size={13} className="text-gray-400" />
-                Tanggal Kedaluwarsa <span className="text-red-500">*</span>
+                Tanggal Kadaluwarsa <span className="text-red-500">*</span>
               </label>
               <input
                 type="date"

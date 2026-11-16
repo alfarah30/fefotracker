@@ -22,7 +22,7 @@ export function exportToCSV(filename, items, reportType = 'all') {
     'PBF / Pemasok',
     'Jumlah Stok',
     'Satuan',
-    'Tanggal Kedaluwarsa',
+    'Tanggal Kadaluwarsa',
     'Sisa Hari',
     'Status Simpan',
     'Keterangan & Tindakan',
@@ -37,7 +37,7 @@ export function exportToCSV(filename, items, reportType = 'all') {
     let recommendation = 'Penyimpanan normal di etalase';
 
     if (status === 'kritis') {
-      statusText = daysLeft <= 0 ? 'Kedaluwarsa' : 'Kritis (<1 bln)';
+      statusText = daysLeft <= 0 ? 'Kadaluwarsa' : 'Kritis (<1 bln)';
       recommendation =
         'Tarik dari rak / Karantina untuk Berita Acara Pemusnahan';
     } else if (status === 'waspada') {

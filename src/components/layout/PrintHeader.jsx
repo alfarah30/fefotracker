@@ -4,7 +4,7 @@ import { formatDateID } from '../../utils/dateUtils';
  * Kop Surat Laporan Resmi Apotek — Hanya tampil saat dicetak (window.print())
  * @param {{ reportTitle?: string }} props
  */
-export default function PrintHeader({ reportTitle = 'Laporan Inventaris & Pemantauan Kadaluarsa Obat' }) {
+export default function PrintHeader({ reportTitle = 'Laporan Inventaris & Pemantauan Kadaluwarsa Obat' }) {
   const todayStr = new Date().toISOString().split('T')[0];
 
   return (

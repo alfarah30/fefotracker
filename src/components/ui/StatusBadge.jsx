@@ -28,7 +28,7 @@ const config = {
 export default function StatusBadge({ status, label, isOverdue }) {
   const current = config[status] || config.aman;
   const Icon = current.icon;
-  const displayLabel = label || (status === 'kritis' && isOverdue ? 'Kedaluwarsa' : current.defaultLabel);
+  const displayLabel = label || (status === 'kritis' && isOverdue ? 'Kadaluwarsa' : current.defaultLabel);
 
   return (
     <span

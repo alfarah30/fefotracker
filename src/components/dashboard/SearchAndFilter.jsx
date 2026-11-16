@@ -4,7 +4,7 @@ const filterOptions = [
   { id: 'all', label: 'Semua Status' },
   { id: 'aman', label: 'Aman (> 6 bln)', activeClass: 'bg-emerald-600 text-white' },
   { id: 'waspada', label: 'Waspada (1–6 bln)', activeClass: 'bg-amber-600 text-white' },
-  { id: 'kritis', label: 'Kritis / Kedaluwarsa', activeClass: 'bg-red-600 text-white' },
+  { id: 'kritis', label: 'Kritis / Kadaluwarsa', activeClass: 'bg-red-600 text-white' },
 ];
 
 /**

@@ -1,10 +1,10 @@
 /**
  * Utilitas tanggal untuk menghitung sisa masa simpan,
- * menentukan status kadaluarsa obat, dan pengurutan FEFO.
+ * menentukan status kadaluwarsa obat, dan pengurutan FEFO.
  */
 
 /**
- * Hitung selisih hari dari hari ini hingga tanggal kedaluwarsa.
+ * Hitung selisih hari dari hari ini hingga tanggal kadaluwarsa.
  * @param {string} expiryDateStr - Format "YYYY-MM-DD"
  * @returns {number} Jumlah hari tersisa (negatif = sudah lewat)
  */
@@ -35,7 +35,7 @@ export function getStatus(daysLeft) {
 
 /**
  * Format sisa hari menjadi teks informatif:
- * - Jika <= 0: "Kedaluwarsa" atau "Kedaluwarsa (X hari lalu)"
+ * - Jika <= 0: "Kadaluwarsa" atau "Kadaluwarsa (X hari lalu)"
  * - Jika 1 s/d 30: "Sisa X hari"
  * - Jika > 30: "X bulan Y hari"
  *
@@ -45,9 +45,9 @@ export function getStatus(daysLeft) {
 export function formatRemainingTime(daysLeft) {
   if (daysLeft < 0) {
     const overdue = Math.abs(daysLeft);
-    return `Kedaluwarsa (${overdue} hari lalu)`;
+    return `Kadaluwarsa (${overdue} hari lalu)`;
   }
-  if (daysLeft === 0) return 'Kedaluwarsa hari ini';
+  if (daysLeft === 0) return 'Kadaluwarsa hari ini';
   if (daysLeft <= 30) return `Sisa ${daysLeft} hari`;
 
   if (daysLeft <= 365) {
@@ -78,7 +78,7 @@ export function formatDateID(dateStr) {
 
 /**
  * Urutkan array obat berdasarkan prinsip FEFO (First Expired, First Out)
- * Tanggal kedaluwarsa paling dekat atau sudah lewat selalu di posisi teratas.
+ * Tanggal kadaluwarsa paling dekat atau sudah lewat selalu di posisi teratas.
  * @param {Array} items
  * @returns {Array} Array terurut baru
  */

@@ -117,7 +117,7 @@ export default function ReportsView({ inventory }) {
                 <th className="px-4 py-3 text-left">No. Batch</th>
                 <th className="px-4 py-3 text-left">PBF / Pemasok Resmi</th>
                 <th className="px-4 py-3 text-center">Stok</th>
-                <th className="px-4 py-3 text-left">Tgl. Kedaluwarsa</th>
+                <th className="px-4 py-3 text-left">Tgl. Kadaluwarsa</th>
                 <th className="px-4 py-3 text-left">Sisa Waktu</th>
                 <th className="px-4 py-3 text-left">Rekomendasi Tindakan Retur</th>
               </tr>
@@ -214,7 +214,7 @@ export default function ReportsView({ inventory }) {
                 <th className="px-4 py-3 text-left">No. Batch</th>
                 <th className="px-4 py-3 text-left">PBF / Pemasok</th>
                 <th className="px-4 py-3 text-center">Stok Karantina</th>
-                <th className="px-4 py-3 text-left">Tgl. Kedaluwarsa</th>
+                <th className="px-4 py-3 text-left">Tgl. Kadaluwarsa</th>
                 <th className="px-4 py-3 text-center">Status</th>
                 <th className="px-4 py-3 text-left">Prosedur Farmasi</th>
               </tr>
@@ -223,7 +223,7 @@ export default function ReportsView({ inventory }) {
               {pemusnahanList.length === 0 ? (
                 <tr>
                   <td colSpan={8} className="py-8 text-center text-xs text-gray-400 italic">
-                    Tidak ada obat berstatus kritis atau kedaluwarsa.
+                    Tidak ada obat berstatus kritis atau kadaluwarsa.
                   </td>
                 </tr>
               ) : (
@@ -280,12 +280,12 @@ export default function ReportsView({ inventory }) {
       {/* ── Catatan Kepatuhan Regulasi Farmasi (BPOM / Kemenkes) ── */}
       <div className="rounded-xl border border-gray-200 bg-white p-5 text-xs text-gray-600 space-y-2">
         <h4 className="font-semibold text-gray-900 flex items-center gap-1.5">
-          <span>Pedoman Pengelolaan Obat Rusak &amp; Kedaluwarsa (Standar Pelayanan Kefarmasian):</span>
+          <span>Pedoman Pengelolaan Obat Rusak &amp; Kadaluwarsa (Standar Pelayanan Kefarmasian):</span>
         </h4>
         <ul className="list-disc list-inside space-y-1 text-gray-500 pl-1">
-          <li>Obat kedaluwarsa atau rusak harus dipisahkan dan disimpan pada lemari/area karantina khusus yang terkunci.</li>
+          <li>Obat kadaluwarsa atau rusak harus dipisahkan dan disimpan pada lemari/area karantina khusus yang terkunci.</li>
           <li>Pemusnahan obat wajib disaksikan oleh petugas Dinkes / BPOM setempat dan dibuatkan Berita Acara Pemusnahan (BAP).</li>
-          <li>Batas waktu permohonan retur ke PBF umumnya berkisar antara 3 hingga 6 bulan sebelum tanggal kedaluwarsa (mengacu pada Surat Perjanjian Kerjasama masing-masing PBF).</li>
+          <li>Batas waktu permohonan retur ke PBF umumnya berkisar antara 3 hingga 6 bulan sebelum tanggal kadaluwarsa (mengacu pada Surat Perjanjian Kerjasama masing-masing PBF).</li>
         </ul>
       </div>
     </div>

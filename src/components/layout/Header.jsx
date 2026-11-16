@@ -33,7 +33,7 @@ export default function Header({ onOpenAddModal, onResetData }) {
               </span>
             </div>
             <p className="hidden text-xs text-gray-500 sm:block">
-              Sistem Manajemen Inventaris &amp; Pemantau Kadaluarsa Apotek
+              Sistem Manajemen Inventaris &amp; Pemantau Kadaluwarsa Apotek
             </p>
           </div>
         </div>

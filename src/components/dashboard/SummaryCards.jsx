@@ -40,7 +40,7 @@ const cardConfig = [
   {
     key: 'kritis',
     filterValue: 'kritis',
-    label: 'Kritis / Kedaluwarsa',
+    label: 'Kritis / Kadaluwarsa',
     subtitle: '< 1 bulan atau lewat tanggal',
     icon: ShieldAlert,
     iconBg: 'bg-red-50',

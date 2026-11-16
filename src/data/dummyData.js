@@ -1,7 +1,7 @@
 /**
  * Data dummy 8 batch obat apotek Indonesia.
  * Dilengkapi dengan informasi distributor/PBF resmi.
- * Disusun berdasarkan urutan tanggal kedaluwarsa (FEFO).
+ * Disusun berdasarkan urutan tanggal kadaluwarsa (FEFO).
  */
 
 const dummyInventory = [

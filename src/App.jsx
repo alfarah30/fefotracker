@@ -246,7 +246,7 @@ export default function App() {
       <footer className="border-t border-gray-200 bg-white print:hidden">
         <div className="mx-auto flex max-w-7xl flex-col sm:flex-row items-center justify-between px-4 py-4 text-xs text-gray-500 sm:px-6 lg:px-8 gap-2">
           <p>
-            FEFO Tracker — Sistem Manajemen Inventaris &amp; Pemantau Kadaluarsa Apotek
+            FEFO Tracker — Sistem Manajemen Inventaris &amp; Pemantau Kadaluwarsa Apotek
           </p>
           <p className="flex items-center gap-1.5 font-medium text-teal-700">
             <span>Standar Pelayanan Kefarmasian:</span>
