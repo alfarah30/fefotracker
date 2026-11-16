@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { X, PlusCircle, Building2, Package, Calendar, Tag, Layers } from 'lucide-react';
 
 const COMMON_SUPPLIERS = [
-  'PT Kimia Farma Trading & Distribution',
-  'PT Enseval Putera Megatrading',
-  'PT Anugrah Argon Medica',
-  'PT Mensa Bina Sukses',
-  'PT Parit Padang Global',
-  'PT Dexa Medica Distribution',
+  'PT KFTD',
+  'PT EPM',
+  'PT AAM',
+  'PT MBS',
+  'PT PPG',
+  'PT DMD',
   'PT Tempo Scan Pacific',
   'PT Kalbe Farma Tbk',
 ];
